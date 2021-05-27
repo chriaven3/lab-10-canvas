@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+
+    function draw() {
+        // your drawing goes here
+        var sketch = document.getElementById('sketch');
+        var context = sketch.getContext("2d");
+
+        context.fillStyle = "green";
+        
+       var choice = prompt("How many shapes? : ");
+       var a = parseInt(choice);
+
+        for (i = 0; i <= a - 1; i++) {
+
+            if ((i % 2) >= 1) {
+            context.fillStyle = "green";
+                context.fillRect(50 * i, 50, 20, 20);
+            }
+            else {
+            context.fillStyle = "blue";
+                context.arc(50 * i, 60, 10, 0, 2 * Math.PI);
+                context.fill();
+            }
+        }
+
+    }
+
+</script>
+
+
+<body onload="draw()">
+    <canvas id="sketch" width="300" height="300" style="border:1px solid #000000" ;>
+
+    </canvas>
+</body>
+
+</html>
